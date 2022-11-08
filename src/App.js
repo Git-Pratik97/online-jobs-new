@@ -1,24 +1,30 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+import Nav from './layout/Nav';
+import BookmarkedFreelancerHome from './components/bookmarked_freelancer/BookmarkedFreelancerHome';
+import BookmarkedFreelancerFindById from './components/bookmarked_freelancer/BookmarkedFreelancerFindById';
+import BookmarkFreelancerAdd from './components/bookmarked_freelancer/BookmarkFreelancerAdd';
+import BookmarkedFreelancerFindBySkill from './components/bookmarked_freelancer/BookmarkedFreelancerFindBySkill';
+import BookmarkedFreelancerRemove from './components/bookmarked_freelancer/BookmarkedFreelancerRemove';
+
+
+
 
 function App() {
   return (
+    <Router>
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Nav/>
+      <Routes>
+        <Route path='/bookmarked_freelancer' element={<BookmarkedFreelancerHome/>}/>
+        <Route path='/bookmarked_freelancer/bookmark' element={<BookmarkFreelancerAdd/>}/>
+        <Route path='/bookmarked_freelancer/findbyid' element={<BookmarkedFreelancerFindById/>}/>
+        <Route path='/bookmarked_freelancer/findbyskill' element={<BookmarkedFreelancerFindBySkill/>}/>
+        <Route path='/bookmarked_freelancer/remove' element={<BookmarkedFreelancerRemove/>}/>
+      </Routes>
     </div>
+    </Router>
   );
 }
 
