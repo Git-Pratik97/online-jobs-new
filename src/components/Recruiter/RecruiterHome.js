@@ -4,8 +4,11 @@ function RecruiterHome() {
   return (
     <div>
         <h2>RecruiterHome</h2>
-        <a href='recruiter/PostJob/'>PostJob</a>
+        <div><a href='recruiter/PostJob/'>PostJob</a></div>
+
+        <div><a href='recruiter/createfeedback'>Create Feedback</a></div>
     </div>
+    
   );
 };
 

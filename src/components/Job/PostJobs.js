@@ -13,7 +13,7 @@ const PostJob= () => {
         },
         onSubmit: (values) => {
             console.log(values);
-            axios.post("http://localhost:8080/jobportal/job/postjob", values)
+            axios.post(`http://localhost:8080/jobportal/job/postjob/${values.freelancerId}/${values.recruiterId}/${values.skillId}`, values)
             .then(resp=>{
                 console.log("Job Added");
                 console.log(resp.data);
@@ -41,7 +41,7 @@ const PostJob= () => {
   return (
     <div className="postJob"> 
     <h2>Post Job</h2>
-    <div>
+    
         <div>
         <form autoComplete="off" onSubmit={formik.handleSubmit}>
           <div className="form-group">
@@ -76,7 +76,6 @@ const PostJob= () => {
         </form>
         </div>    
           
-    </div>
     </div>
 )
 
