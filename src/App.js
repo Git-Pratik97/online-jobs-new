@@ -7,6 +7,8 @@ import BookmarkedFreelancerFindById from './components/bookmarked_freelancer/Boo
 import BookmarkFreelancerAdd from './components/bookmarked_freelancer/BookmarkFreelancerAdd';
 import BookmarkedFreelancerFindBySkill from './components/bookmarked_freelancer/BookmarkedFreelancerFindBySkill';
 import BookmarkedFreelancerRemove from './components/bookmarked_freelancer/BookmarkedFreelancerRemove';
+import PostJob from './components/Job/PostJobs';
+import RecruiterHome from './components/Recruiter/RecruiterHome';
 
 
 
@@ -22,6 +24,8 @@ function App() {
         <Route path='/bookmarked_freelancer/findbyid' element={<BookmarkedFreelancerFindById/>}/>
         <Route path='/bookmarked_freelancer/findbyskill' element={<BookmarkedFreelancerFindBySkill/>}/>
         <Route path='/bookmarked_freelancer/remove' element={<BookmarkedFreelancerRemove/>}/>
+        <Route path='/recruiter' element={<RecruiterHome/>}/>
+        <Route path='/recruiter/Postjob' element={<PostJob/>}/>
       </Routes>
     </div>
     </Router>

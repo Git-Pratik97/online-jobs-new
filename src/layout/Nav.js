@@ -21,8 +21,8 @@ const Nav = () => {
         <Link style={navStyle} to="/feedback">
           <li>Feedback</li>
         </Link>
-        <Link style={navStyle} to="/freelancer">
-          <li>Freelancer</li>
+        <Link style={navStyle} to="/recruiter">
+          <li>Recruiter</li>
         </Link>
       </ul>
     </nav>
