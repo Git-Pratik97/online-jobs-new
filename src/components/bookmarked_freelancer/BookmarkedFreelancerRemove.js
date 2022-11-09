@@ -1,6 +1,28 @@
 import React from 'react'
+import { useState } from "react";
+
+import axios from 'axios';
 
 const BookmarkedFreelancerRemove = () => {
+
+  const [input, setInput] = useState({
+    freelancerId: "",
+    bookmarkedById: "",
+    skillId: ""
+  });
+
+  const { freelancerId, bookmarkedById, skillId } = input;
+
+  const onInputChange = (e) => {
+      setInput({...input, [e.target.name]:e.target.value});
+  }
+
+  const onSubmit = async (e) => {
+    e.preventDefault();
+    await axios.delete(`http://localhost:8080/jobportal/bookmarkedfreelancer/removeBookmarkedFreelancer/${freelancerId}/${bookmarkedById}/${skillId}`);
+    console.log("Removed");
+  }
+
   return (
     <div>
       <h1>Bookmarked Freelancer Remove</h1>
@@ -33,32 +55,78 @@ const BookmarkedFreelancerRemove = () => {
       {/* <BookmarkedFreelancerFindById/> */}
       <div className="position-absolute top-50 start-50 translate-middle">
     <span className="align-middle"><br/>
-      <p>
+   
       <h2>Remove Bookmarked Freelancer</h2>
-      </p>
-      <form>
-  <div className="mb-3">
-    <label for="exampleInputEmail1" className="form-label">Freelancer ID</label>
-    <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"/>
-    <div id="emailHelp" className="form-text">.</div>
-  </div>
-  <div className="mb-3">
-    <label for="exampleInputPassword1" className="form-label">Bookmarked By ID</label>
-    <input type="password" className="form-control" id="exampleInputPassword1"/>
-  </div>
-  <div className="mb-3">
-    <label for="exampleInputPassword1" className="form-label">Skill ID</label>
-    <input type="password" className="form-control" id="exampleInputPassword1"/>
-  </div>
-  <div className="mb-3 form-check">
-    <input type="checkbox" className="form-check-input" id="exampleCheck1"/>
-    <label className="form-check-label" for="exampleCheck1">Check me out</label>
-  </div>
-  <button type="submit" className="btn btn-primary">Submit</button>
-</form>
-     </span>
+      
+      <form className="was-validated" onSubmit={(e) => onSubmit(e)}>
+            <div className="mb-3">
+              <label htmlFor="exampleInputEmail1" className="form-label">
+                Freelancer ID
+              </label>
+              <input
+                type="number"
+                className="form-control"
+                id="validationTextarea"
+                aria-describedby="emailHelp"
+                name="freelancerId"
+                value={freelancerId}
+                // defaultValue={freelancerId}
+                onChange={(e)=>onInputChange(e)}
+                required
+              />
+            </div>
+            <div className="mb-3">
+              <label htmlFor="exampleInputEmail1" className="form-label">
+                Bookmarked By ID
+              </label>
+              <input
+                type="number"
+                className="form-control"
+                id="validationTextarea"
+                name="bookmarkedById"
+                // defaultValue={bookmarkedById}
+                value={bookmarkedById}
+                onChange={(e)=>onInputChange(e)}
+                required
+              />
+            </div>
+            <div className="mb-3">
+              <label htmlFor="exampleInputEmail1" className="form-label">
+                Skill ID
+              </label>
+              <input
+                type="number"
+                className="form-control"
+                id="validationTextarea"
+                name="skillId"
+                value={skillId}
+                // defaultValue={skillId}
+                onChange={(e)=>onInputChange(e)}
+                required
+              />
+            </div>
+            {/* <div className="mb-3 form-check">
+              <input
+                type="checkbox"
+                className="form-check-input"
+                id="exampleCheck1"
+              />
+              <label className="form-check-label" htmlFor="exampleCheck1">
+                Check me out
+              </label>
+            </div> */}
+            <button type="submit" className="btn btn-outline-primary">
+              Remove
+            </button>
+            <a href="/bookmarked_freelancer">
+              <button type="submit" className="btn btn-outline-danger mx-2">
+                Cancel
+              </button>
+            </a>
+          </form>
+        </span>
+      </div>
     </div>
-    </div>    
   )
 }
 
