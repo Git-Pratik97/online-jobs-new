@@ -22,13 +22,13 @@ function AwardJob() {
   }
 
   return (
-    <div>
+    <div className="card" >
       <form>
-        <label>Enter the Job ID</label>
-        <input type="number" onChange={handleJobId}></input>
-        <label>Enter the Freelancer ID</label>
-        <input type="number" onChange={handleFreelancerId}></input>
-        <button onClick={hire}>Award job </button>
+        <label>Enter the Job ID</label><br/>
+        <input type="number" onChange={handleJobId}></input><br/>
+        <label>Enter the Freelancer ID</label><br/>
+        <input type="number" onChange={handleFreelancerId}></input><br/><br/>
+        <button onClick={hire}>Award job </button><p></p>
       </form>
     </div>
   )

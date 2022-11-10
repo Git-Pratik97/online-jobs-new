@@ -23,18 +23,28 @@ const loadJobs = async (e) => {
 
 
 return (
-  <div className="App">
-   <div className="Container">
+  <div className="card" >
+      <div className="order-2 p-2">
+        <span className="align-middle">
+    <h1>Show All Job Applications By Freelancer ID</h1>
+   <div className="order-2 p-2">
+   <div className="card">
   <div>
-    <form>
-      <label>Enter your ID</label>
+  <form className="was-validated">
+  <label htmlFor="exampleInputEmail1" className="form-label">
+    Enter your Freelancer ID
+    </label>
+    <br/>
       <input type="number" onChange={handleInput} ></input>
-      <button onClick={loadJobs} >Submit</button>
+      <br/>
+      <br/>
+      <button type="submit"
+              className="btn btn-primary" onClick={loadJobs} >Submit</button>
     </form>
   </div>
   
   <div id="applied-jobs">
-    <table className='table-border-shadow'>
+  <table className="table">
       <thead>
         <tr>
           <th scope="col">ID</th>
@@ -61,6 +71,10 @@ return (
    </div>
    </div>
    </div>
+   </span>
+   </div>
+   </div>
+   
 );
 }
 

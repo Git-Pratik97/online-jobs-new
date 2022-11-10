@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function FindAllJobApps() {
   const [jobApps, setjobApps] = useState();
@@ -20,11 +21,14 @@ function FindAllJobApps() {
   };
 
   return (
-    <div className="App">
+    <div className="card" >
       {/* {jobApps && jobApps.map((job) => (
         <div>{job.id}</div>
       ))} */}
-      <div className="Container">
+     
+     <div className="order-2 p-2">
+        <span className="align-middle">
+        <h1>Find All Job Applications</h1>
         {/* <div>
           <form>
             <label>Enter your ID</label>
@@ -33,8 +37,9 @@ function FindAllJobApps() {
           </form>
         </div> */}
 
-        <div id="applied-jobs">
-          <table className="table-border-shadow">
+      <div className="order-2 p-2">
+      <div className="card">
+      <table className="table">
             <thead>
               <tr>
                 <th scope="col">ID</th>
@@ -54,15 +59,17 @@ function FindAllJobApps() {
                   <td>{job.appliedDate}</td>
                   <td>
                     <form action="">
-                      <a href='/freelancer/awardjob'><button type="submit">Hire</button></a>
+                      <Link to='/freelancer/awardjob'><button className="btn btn-primary" type="submit">Hire</button></Link>
                     </form>
                   </td>
                 </tr>
               ))}
             </tbody>
           </table>
+          </div>
         </div>
-      </div>
+        </span>
+        </div>
     </div>
   );
 }

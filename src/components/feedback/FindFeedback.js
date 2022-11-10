@@ -1,8 +1,10 @@
 import { useFormik } from 'formik'
-import React from 'react'
+import React, { useState } from 'react'
 import axios from 'axios'
 
 const FindFeedback=()=> {
+
+    const[output,setOutput]=useState('');
     const formik= useFormik({
         initialValues:{
             freelancerId:''
@@ -11,8 +13,8 @@ const FindFeedback=()=> {
             console.log(values);
             axios.get(`http://localhost:8080/jobportal/recruiter/findfeedbacksbyfreelancer/${values.freelancerId}`, values)
             .then(resp=>{
-                console.log("Feddback Created");
-                console.log(resp);
+                console.log("This is your feedback");
+                console.log(resp.data);
             }).catch(err=>{
                 console.error(err.response.data);
            })
@@ -30,10 +32,10 @@ const FindFeedback=()=> {
   return (
     <div className='findFeedback'>
         <h2>Find Feedback</h2>
-        <form autoComplete="off" onSubmit={formik.handleSubmit}>
+        <form  className="was-validated" autoComplete="off" onSubmit={formik.handleSubmit}>
             <div className="form-group">
                  <label htmlFor="freelancerId">Freelancer ID:</label>
-                 <input name="freelancerId" type="Integer" className="form-control" id="freelancerId" value={formik.values.freelancerId} onChange={formik.handleChange}/>
+                 <input name="freelancerId" type="Integer" className="form-control" id="validationTextarea" value={formik.values.freelancerId} onChange={formik.handleChange} required/>
                  {formik.errors.freelancerId? <div className="errors">{formik.errors.freelancerId}</div> : null}
             </div>
 

@@ -28,8 +28,8 @@ function FindFreelancer() {
      { freelancer && <div>
         <ul>
           <li >Freelancer ID: {freelancer.data.id}</li>
-          <li>Freelancer ID: {freelancer.data.firstName}</li>
-          <li>Freelancer ID: {freelancer.data.lastName}</li>
+          <li>Freelancer Name: {freelancer.data.firstName}</li>
+          <li>Freelancer last Name: {freelancer.data.lastName}</li>
         </ul>
       </div>
 }

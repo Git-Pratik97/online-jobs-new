@@ -11,6 +11,8 @@ const BookmarkedFreelancerRemove = () => {
     skillId: ""
   });
 
+  // const [output, setOutput] 
+
   const { freelancerId, bookmarkedById, skillId } = input;
 
   const onInputChange = (e) => {
@@ -53,12 +55,13 @@ const BookmarkedFreelancerRemove = () => {
       </ul>
         {/* <BookmarkFreelancerAdd/> */}
       {/* <BookmarkedFreelancerFindById/> */}
-      <div className="position-absolute top-50 start-50 translate-middle">
+      <div className="card" >
+      <div className="align-middle">
     <span className="align-middle"><br/>
-   
+    <div className="card-header">
       <h2>Remove Bookmarked Freelancer</h2>
-      
-      <form className="was-validated" onSubmit={(e) => onSubmit(e)}>
+      </div>
+      <form className="was-validated " onSubmit={(e) => onSubmit(e)}>
             <div className="mb-3">
               <label htmlFor="exampleInputEmail1" className="form-label">
                 Freelancer ID
@@ -74,6 +77,9 @@ const BookmarkedFreelancerRemove = () => {
                 onChange={(e)=>onInputChange(e)}
                 required
               />
+              <div className="invalid-feedback">
+      Please Enter Valid Freelancer ID
+    </div>
             </div>
             <div className="mb-3">
               <label htmlFor="exampleInputEmail1" className="form-label">
@@ -89,6 +95,9 @@ const BookmarkedFreelancerRemove = () => {
                 onChange={(e)=>onInputChange(e)}
                 required
               />
+              <div className="invalid-feedback">
+      Please Enter Valid Recruiter ID
+    </div>
             </div>
             <div className="mb-3">
               <label htmlFor="exampleInputEmail1" className="form-label">
@@ -104,6 +113,9 @@ const BookmarkedFreelancerRemove = () => {
                 onChange={(e)=>onInputChange(e)}
                 required
               />
+              <div className="invalid-feedback">
+      Please Enter Valid Skill ID
+    </div>
             </div>
             {/* <div className="mb-3 form-check">
               <input
@@ -126,6 +138,7 @@ const BookmarkedFreelancerRemove = () => {
           </form>
         </span>
       </div>
+    </div>
     </div>
   )
 }

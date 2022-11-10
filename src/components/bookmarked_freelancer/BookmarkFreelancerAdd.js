@@ -1,7 +1,8 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import axios from 'axios';
+import { Link } from "react-router-dom";
 
 const BookmarkFreelancerAdd = () => {
   // const [freelancer, setFreelancer] = useState({
@@ -18,6 +19,9 @@ const BookmarkFreelancerAdd = () => {
 
   const { freelancerId, bookmarkedById, skillId } = input;
 
+  const [formErrors, setFormErrors] = useState({});
+  const [isSubmit, setIsSubmit] = useState(false);
+
   const onInputChange = (e) => {
       setInput({...input, [e.target.name]:e.target.value});
   }
@@ -26,10 +30,18 @@ const BookmarkFreelancerAdd = () => {
     e.preventDefault();
     await axios.post(`http://localhost:8080/jobportal/bookmarkedfreelancer/bookmarkFreelancer/${freelancerId}/${bookmarkedById}/${skillId}`);
     console.log("Success");
+    setIsSubmit(true);
   } 
+  useEffect(() => {
+    console.log(formErrors);
+    if (Object.keys(formErrors).length == 0 && isSubmit) {
+      console.log(input);
+    }
+  }, [formErrors]);
 
   return (
     <div>
+ 
       <div>
         <h1>Bookmarked Freelancer</h1>
 
@@ -63,11 +75,13 @@ const BookmarkFreelancerAdd = () => {
         {/* <BookmarkFreelancerAdd/> */}
         {/* <BookmarkedFreelancerFindById/> */}
       </div>
-      <div className="position-absolute top-50 start-50 translate-middle">
+      <div className="card" >
+      <div className="align-middle">
         <span className="align-middle">
           <br />
-
+          <div className="card-header">
           <h2>Bookmark Freelancer</h2>
+          </div>
 
           <form className="was-validated" onSubmit={(e) => onSubmit(e)}>
             <div className="mb-3">
@@ -136,14 +150,21 @@ const BookmarkFreelancerAdd = () => {
             <button type="submit" className="btn btn-outline-primary">
               Add
             </button>
-            <a href="/bookmarked_freelancer">
+            <Link to="/bookmarked_freelancer">
               <button type="submit" className="btn btn-outline-danger mx-2">
                 Cancel
               </button>
-            </a>
+            </Link>
           </form>
+          {Object.keys(formErrors).length === 0 && isSubmit ? (
+        <div className="ui message success">Bookmarked Successfully</div>
+      ) : (
+        <pre>{JSON.stringify( undefined, 2)}</pre>
+        // <div className="ui message success">Retrieved Successfully</div>
+      )}
         </span>
       </div>
+    </div>
     </div>
   );
 };

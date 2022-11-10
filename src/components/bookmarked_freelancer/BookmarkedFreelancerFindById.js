@@ -1,9 +1,11 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 
 const BookmarkedFreelancerFindById = () => {
   const [freelancer, setFreelancer] = useState("");
+  const [formErrors, setFormErrors] = useState({});
+  const [isSubmit, setIsSubmit] = useState(false);
 
   const loadfreelancer = async (e) => {
     e.preventDefault();
@@ -12,8 +14,17 @@ const BookmarkedFreelancerFindById = () => {
     );
     // console.log(result.data);
     setFreelancer(result.data);
+    setIsSubmit(true);
     console.log(result.data);
   };
+
+  useEffect(() => {
+    console.log(formErrors);
+    if (Object.keys(formErrors).length == 0 && isSubmit) {
+      console.log(freelancer);
+    }
+  }, [formErrors]);
+
 
   const handleInput = (e) => {
     setFreelancer(e.target.value);
@@ -55,12 +66,13 @@ const BookmarkedFreelancerFindById = () => {
           </li>
         </ul>
       </div>
-      <div className="position-absolute top-50 start-50 translate-middle">
+      <div className="card" >
+      <div className="align-middle">
         <span className="align-middle">
           <br />
-
+          <div className="card-header">
           <h2>Bookmarked Freelancer Find By ID</h2>
-
+          </div>
           <form className="was-validated">
             <div className="mb-3">
               <label htmlFor="exampleInputEmail1" className="form-label">
@@ -74,10 +86,11 @@ const BookmarkedFreelancerFindById = () => {
                 onChange={handleInput}
                 required
               />
+              <div className="invalid-feedback">
+      Please Enter Valid ID
+    </div>
               {/* <p> Text Typed:{freelancer}</p> */}
-              <div id="emailHelp" className="form-text">
-                .
-              </div>
+              
             </div>
             <button
               type="submit"
@@ -86,6 +99,12 @@ const BookmarkedFreelancerFindById = () => {
             >
               Find It
             </button>
+            {Object.keys(formErrors).length === 0 && isSubmit ? (
+        <div className="ui message success">Retrieved Successfully</div>
+      ) : (
+        <pre>{JSON.stringify( undefined, 2)}</pre>
+        // <div className="ui message success">Retrieved Successfully</div>
+      )}
           </form>
         </span>
         <table className="table">
@@ -108,7 +127,9 @@ const BookmarkedFreelancerFindById = () => {
             </tbody>
           )}
         </table>
+        
       </div>
+    </div>
     </div>
   );
 };

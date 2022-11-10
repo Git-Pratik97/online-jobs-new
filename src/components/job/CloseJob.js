@@ -13,15 +13,14 @@ function DeleteJob() {
     }
     
     const onSubmit = async (e) => {
-       e.preventDefault();
-        await axios.get(`http://localhost:8080/jobportal/job/close/${input}`);
+       // e.preventDefault();
+        await axios.get(`http://localhost:8080/jobportal/job/close/${jobId}`);
         console.log("Removed");
     }
 
-    // onSubmit();
+    onSubmit();
   return (
     <div className='deleteJob'>
-    deleteJob
         <form onSubmit={(e) => onSubmit(e)}>
         <header className='deleteJob-header'>
             <h2>DeleteJob</h2>

@@ -1,5 +1,5 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 
 const BookmarkedFreelancerFindBySkill = () => {
@@ -9,6 +9,8 @@ const BookmarkedFreelancerFindBySkill = () => {
 
   const [freelancers, setFreelancers] = useState([]);
   const [input, setInput] = useState("");
+  const [formErrors, setFormErrors] = useState({});
+  const [isSubmit, setIsSubmit] = useState(false);
 
   const handleInput = (e) => {
     setInput(e.target.value);
@@ -21,7 +23,7 @@ const BookmarkedFreelancerFindBySkill = () => {
      axios.get(`http://localhost:8080/jobportal/bookmarkedfreelancer/findbookmarkedfreelancerbyskillName/${input}`)
      .then((data) => setFreelancers(data.data))
      .catch((error) => console.log(error));
-     
+     setIsSubmit(true);
     // console.log(result.data, "String");
     // const item = await result.json();
     // setFreelancers(result);
@@ -30,7 +32,12 @@ const BookmarkedFreelancerFindBySkill = () => {
   // handleSearch();
 
   // console.log(input);
-
+  useEffect(() => {
+    console.log(formErrors);
+    if (Object.keys(formErrors).length == 0 && isSubmit) {
+      console.log(freelancers);
+    }
+  }, [formErrors]);
 
 
   return (
@@ -67,12 +74,13 @@ const BookmarkedFreelancerFindBySkill = () => {
           </a>
         </li>
       </ul>
+      <div className="card" >
       <div className="order-2 p-2">
         <span className="align-middle">
           <br />
-
+          <div className="card-header">
           <h2>Bookmarked Freelancer Find By Skill</h2>
-
+          </div>
           <form className="was-validated">
             <div className="mb-3">
               <label htmlFor="exampleInputEmail1" className="form-label">
@@ -88,6 +96,9 @@ const BookmarkedFreelancerFindBySkill = () => {
                 onChange={handleInput}
                 required
               />
+<div className="invalid-feedback">
+      Please Enter Valid Skill Name
+    </div>
               <div id="emailHelp" className="form-text">
                 .
               </div>
@@ -100,7 +111,14 @@ const BookmarkedFreelancerFindBySkill = () => {
             >
               Find It
             </button>
+            
           </form>
+          {Object.keys(formErrors).length === 0 && isSubmit ? (
+        <div className="ui message success">Retrieved Successfully</div>
+      ) : (
+        <pre>{JSON.stringify( undefined, 2)}</pre>
+        // <div className="ui message success">Retrieved Successfully</div>
+      )}
         </span>
         {/* <div>
       { freelancer && freelancer.map( (item, index) => (
@@ -134,6 +152,7 @@ const BookmarkedFreelancerFindBySkill = () => {
             ))}
         </table>
       </div>
+    </div>
     </div>
   );
 };
