@@ -1,20 +1,28 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 
 function RecruiterHome() {
   return (
     <div>
         <h2>RecruiterHome</h2>
-        <div><a href='recruiter/PostJob/'>Post Job</a></div>
+        <div><Link to='/PostJob/'>Post Job</Link></div>
 
-        <div><a href='recruiter/closejob'>Close Job</a></div>
+        <div><Link to='/closejob'>Close Job</Link></div>
 
-        <div><a href='recruiter/findfeedbacksbyid'>Find Feedbacks By Id</a></div>
+        
 
-        <div><a href='freelancer/findfreelancer'>Find Freelancer By ID</a></div>
+        <div><Link  to="/bookmarked_freelancer">
+          Bookmarked Freelancer
+        </Link>
+        </div>
 
-        <div><a href='freelancer/awardjob'>Award Job to freelancer</a></div>
+        <div>
+        <Link to="/createfeedback">Create Feedback</Link>
+      </div>
 
-        <div><a href='recruiter/findalljobs'>Find All Job Applications</a></div>
+        <div><Link to='/awardjob'>Award Job to freelancer</Link></div>
+
+        <div><Link to='/findalljobs'>Find All Job Applications</Link></div>
     </div>
     
   );

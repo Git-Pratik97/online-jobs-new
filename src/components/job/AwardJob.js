@@ -23,13 +23,19 @@ function AwardJob() {
 
   return (
     <div className="card" >
+      <h1>Award Job to Freelancer</h1>
+      <div className="order-2 p-2">
+        <span className="align-middle">
       <form>
         <label>Enter the Job ID</label><br/>
-        <input type="number" onChange={handleJobId}></input><br/>
+        <input type="number" class="form-control" id="autoSizingInputGroup" onChange={handleJobId}></input><br/>
         <label>Enter the Freelancer ID</label><br/>
-        <input type="number" onChange={handleFreelancerId}></input><br/><br/>
-        <button onClick={hire}>Award job </button><p></p>
+        <input type="number" class="form-control" id="autoSizingInputGroup" onChange={handleFreelancerId}></input><br/>
+        <button type="submit"
+              className="btn btn-primary" onClick={hire}>Award job </button><p></p>
       </form>
+      </span>
+      </div>
     </div>
   )
 }

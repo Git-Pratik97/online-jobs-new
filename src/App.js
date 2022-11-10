@@ -22,9 +22,12 @@ import MySkillsUpdate from './components/skill/MySkillsUpdate';
 import MySkillsAdd from './components/skill/MySkillsAdd';
 import MySkills from './components/skill/MySkills';
 import MySkillsRemove from './components/skill/MySkillsRemove';
-
-
-
+import Login from './components/Login/Login';
+import Registration from './components/Login/Registration';
+import FreelancerFindById from './components/freelancer/FreelancerFindById';
+import FreelancerSearchJobs from './components/freelancer/FreelancerSearchJobs';
+import FreelancerBookmarkJobs from './components/boomarked_job/FreelancerBookmarkJobs';
+import Admin from './components/admin/Admin';
 
 function App() {
   return (
@@ -38,23 +41,31 @@ function App() {
         <Route path='/bookmarked_freelancer/findbyskill' element={<BookmarkedFreelancerFindBySkill/>}/>
         <Route path='/bookmarked_freelancer/remove' element={<BookmarkedFreelancerRemove/>}/>
 
-        <Route path='/recruiter/Postjob' element={<PostJob/>}/>
-        <Route path='/recruiter/createfeedback' element={<CreateFeedback/>}/>
+        <Route path='/Postjob' element={<PostJob/>}/>
+        <Route path='/createfeedback' element={<CreateFeedback/>}/>
         <Route path='/recruiter' element={<RecruiterHome/>}/>
-        <Route path='/recruiter/showalljobapplicationsbyfreelancer' element={<ShowAllJobApps/>}/>
-        <Route path='/recruiter/findalljobs' element={<FindAllJobApps/>}/>
+        <Route path='/showalljobapplicationsbyfreelancer' element={<ShowAllJobApps/>}/>
+        <Route path='/findalljobs' element={<FindAllJobApps/>}/>
 
         <Route path='/freelancer' element={<FreelancerHome/>}/>
-        <Route path='/freelancer/findfreelancer' element={<FindFreelancer/>}/>
-        <Route path='/freelancer/awardjob' element={<AwardJob/>}/>
-        <Route path='/freelancer/MySkills' element={<MySkills/>}/>
-        <Route path='/freelancer/MySkills/AddSkill' element={<MySkillsAdd/>}/>
-        <Route path='/freelancer/MySkills/UpdateSkill' element={<MySkillsUpdate/>}/>
-        <Route path='/freelancer/MySkills/RemoveSkill' element={<MySkillsRemove/>}/>
+        <Route path='/findfreelancer' element={<FindFreelancer/>}/>
+        <Route path='/awardjob' element={<AwardJob/>}/>
+        <Route path='/MySkills' element={<MySkills/>}/>
+        <Route path='freelancer/MySkills/AddSkill' element={<MySkillsAdd/>}/>
+        <Route path='freelancer/MySkills/UpdateSkill' element={<MySkillsUpdate/>}/>
+        <Route path='freelancer/MySkills/RemoveSkill' element={<MySkillsRemove/>}/>
 
-        <Route path='/recruiter/findrecruiter' element={<FindRecruiter/>}/>
-        <Route path='/recruiter/findfeedbacksbyid' element={<FindFeedback/>}/>
-        <Route path='/recruiter/closejob' element={<DeleteJob/>}/>
+        <Route path='/findrecruiter' element={<FindRecruiter/>}/>
+        <Route path='/findfeedbacksbyid' element={<FindFeedback/>}/>
+        <Route path='/closejob' element={<DeleteJob/>}/>
+
+        <Route path='/login' element={<Login/>}/>
+        <Route path='/registration' element={<Registration/>}/>
+        <Route path='/findbyid' element={<FreelancerFindById/>}/>
+        <Route path='/searchjobs' element={<FreelancerSearchJobs/>}/>
+        <Route path='/bookmarkjobs' element={<FreelancerBookmarkJobs/>}/>
+
+        <Route path='/admin' element={<Admin/>}/>
 
 
       </Routes>

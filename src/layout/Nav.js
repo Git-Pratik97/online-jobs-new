@@ -9,15 +9,11 @@ const Nav = () => {
     <nav className="navbar navbar-dark bg-dark">
       <h1>Online Jobs</h1>
       <ul>
-        <Link style={navStyle} to="/">
-          <li>Home</li>
+        <Link style={navStyle} to="/admin">
+          <li>Admin</li>
         </Link>
-        <Link style={navStyle} to="/bookmarked_freelancer">
-          <li>Bookmarked Freelancer</li>
-        </Link>
-        <Link style={navStyle} to="/bookmarked_by">
-          <li>Bookmarked Job</li>
-        </Link>
+        
+        
         <Link style={navStyle} to="/freelancer">
           <li>Freelancer</li>
         </Link>
@@ -26,6 +22,9 @@ const Nav = () => {
         </Link>
         <Link style={navStyle} to="/Login">
           <li>Login</li>
+        </Link>
+        <Link style={navStyle} to="/registration">
+          <li>Register</li>
         </Link>
       </ul>
     </nav>

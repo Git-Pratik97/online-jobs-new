@@ -25,7 +25,6 @@ const BookmarkedFreelancerFindById = () => {
     }
   }, [formErrors]);
 
-
   const handleInput = (e) => {
     setFreelancer(e.target.value);
   };
@@ -66,70 +65,66 @@ const BookmarkedFreelancerFindById = () => {
           </li>
         </ul>
       </div>
-      <div className="card" >
-      <div className="align-middle">
-        <span className="align-middle">
-          <br />
-          <div className="card-header">
-          <h2>Bookmarked Freelancer Find By ID</h2>
-          </div>
-          <form className="was-validated">
-            <div className="mb-3">
-              <label htmlFor="exampleInputEmail1" className="form-label">
-                Bookmarked Freelancer ID
-              </label>
-              <input
-                type="number"
-                className="form-control"
-                id="validationTextarea"
-                aria-describedby="emailHelp"
-                onChange={handleInput}
-                required
-              />
-              <div className="invalid-feedback">
-      Please Enter Valid ID
-    </div>
-              {/* <p> Text Typed:{freelancer}</p> */}
-              
+      <div className="card">
+        <div className="align-middle">
+          <span className="align-middle">
+            <br />
+            <div className="card-header">
+              <h2>Bookmarked Freelancer Find By ID</h2>
             </div>
-            <button
-              type="submit"
-              className="btn btn-primary"
-              onClick={loadfreelancer}
-            >
-              Find It
-            </button>
-            {Object.keys(formErrors).length === 0 && isSubmit ? (
-        <div className="ui message success">Retrieved Successfully</div>
-      ) : (
-        <pre>{JSON.stringify( undefined, 2)}</pre>
-        // <div className="ui message success">Retrieved Successfully</div>
-      )}
-          </form>
-        </span>
-        <table className="table">
-          <thead>
-            <tr>
-              <th scope="col">ID</th>
-              <th scope="col">Freelancer ID</th>
-              <th scope="col">Bookmarked By ID</th>
-              <th scope="col">Skill ID</th>
-            </tr>
-          </thead>
-          {freelancer && (
-            <tbody>
+            <form className="was-validated">
+              <div className="mb-3">
+                <label htmlFor="exampleInputEmail1" className="form-label">
+                  Bookmarked Freelancer ID
+                </label>
+                <input
+                  type="number"
+                  className="form-control"
+                  id="validationTextarea"
+                  aria-describedby="emailHelp"
+                  onChange={handleInput}
+                  required
+                />
+                <div className="invalid-feedback">Please Enter Valid ID</div>
+                {/* <p> Text Typed:{freelancer}</p> */}
+              </div>
+              <button
+                type="submit"
+                className="btn btn-primary"
+                onClick={loadfreelancer}
+              >
+                Find It
+              </button>
+              {Object.keys(formErrors).length === 0 && isSubmit ? (
+                <div className="ui message success">Retrieved Successfully</div>
+              ) : (
+                <pre>{JSON.stringify(undefined, 2)}</pre>
+                // <div className="ui message success">Retrieved Successfully</div>
+              )}
+            </form>
+          </span>
+          <table className="table">
+            <thead>
               <tr>
-                <th scope="row">{freelancer.id}</th>
-                <td>{freelancer.freelancerId}</td>
-                <td>{freelancer.bookmarkedById}</td>
-                <td>{freelancer.skillId}</td>
+                <th scope="col">ID</th>
+                <th scope="col">Freelancer ID</th>
+                <th scope="col">Bookmarked By ID</th>
+                <th scope="col">Skill ID</th>
               </tr>
-            </tbody>
-          )}
-        </table>
-        
+            </thead>
+            {freelancer && (
+              <tbody>
+                <tr>
+                  <th scope="row">{freelancer.id}</th>
+                  <td>{freelancer.freelancerId}</td>
+                  <td>{freelancer.bookmarkedById}</td>
+                  <td>{freelancer.skillId}</td>
+                </tr>
+              </tbody>
+            )}
+          </table>
+        </div>
       </div>
-    </div>
     </div>
   );
 };
