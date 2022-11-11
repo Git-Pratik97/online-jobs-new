@@ -59,8 +59,8 @@ const BookmarkedFreelancerRemove = () => {
       </ul>
       {/* <BookmarkFreelancerAdd/> */}
       {/* <BookmarkedFreelancerFindById/> */}
-      <div className="card">
-        <div className="align-middle">
+      <div className="card shadow-lg p-3 mb-5 bg-body rounded">
+        <div className="align-self-center shadow-lg p-3 mb-5 bg-body rounded">
           <span className="align-middle">
             <br />
             <div className="card-header">

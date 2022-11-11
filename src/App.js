@@ -28,6 +28,9 @@ import FreelancerFindById from './components/freelancer/FreelancerFindById';
 import FreelancerSearchJobs from './components/freelancer/FreelancerSearchJobs';
 import FreelancerBookmarkJobs from './components/boomarked_job/FreelancerBookmarkJobs';
 import Admin from './components/admin/Admin';
+import ApplyForJob from './components/job_application/ApplyForJob';
+import Home from './layout/Home';
+import FindAllJobs from './components/job/FindAllJobs';
 
 function App() {
   return (
@@ -35,6 +38,7 @@ function App() {
     <div className="App">
       <Nav/>
       <Routes>
+        <Route path='/' element={<Home/>}/>
         <Route path='/bookmarked_freelancer' element={<BookmarkedFreelancerHome/>}/>
         <Route path='/bookmarked_freelancer/bookmark' element={<BookmarkFreelancerAdd/>}/>
         <Route path='/bookmarked_freelancer/findbyid' element={<BookmarkedFreelancerFindById/>}/>
@@ -45,12 +49,15 @@ function App() {
         <Route path='/createfeedback' element={<CreateFeedback/>}/>
         <Route path='/recruiter' element={<RecruiterHome/>}/>
         <Route path='/showalljobapplicationsbyfreelancer' element={<ShowAllJobApps/>}/>
-        <Route path='/findalljobs' element={<FindAllJobApps/>}/>
+        <Route path='/findalljobapps' element={<FindAllJobApps/>}/>
 
         <Route path='/freelancer' element={<FreelancerHome/>}/>
         <Route path='admin/freelancer/findfreelancer' element={<FindFreelancer/>}/>
         <Route path='/awardjob' element={<AwardJob/>}/>
         <Route path='/MySkills' element={<MySkills/>}/>
+        <Route path='/applyforjob' element={<ApplyForJob/>}/>
+        <Route path='/findalljobs' element={<FindAllJobs/>}/>
+        
         <Route path='freelancer/MySkills/AddSkill' element={<MySkillsAdd/>}/>
         <Route path='freelancer/MySkills/UpdateSkill' element={<MySkillsUpdate/>}/>
         <Route path='freelancer/MySkills/RemoveSkill' element={<MySkillsRemove/>}/>

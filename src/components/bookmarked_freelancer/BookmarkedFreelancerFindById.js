@@ -1,5 +1,5 @@
 import React from "react";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import axios from "axios";
 
 const BookmarkedFreelancerFindById = () => {
@@ -15,15 +15,16 @@ const BookmarkedFreelancerFindById = () => {
     // console.log(result.data);
     setFreelancer(result.data);
     setIsSubmit(true);
+    setFormErrors(formErrors);
     console.log(result.data);
   };
 
-  useEffect(() => {
-    console.log(formErrors);
-    if (Object.keys(formErrors).length == 0 && isSubmit) {
-      console.log(freelancer);
-    }
-  }, [formErrors]);
+  // useEffect(() => {
+  //   console.log(formErrors);
+  //   if (Object.keys(formErrors).length == 0 && isSubmit) {
+  //     console.log(freelancer);
+  //   }
+  // }, [formErrors]);
 
   const handleInput = (e) => {
     setFreelancer(e.target.value);
@@ -65,14 +66,14 @@ const BookmarkedFreelancerFindById = () => {
           </li>
         </ul>
       </div>
-      <div className="card">
-        <div className="align-middle">
+      <div className="card align-middle shadow-lg p-3 mb-5 bg-body rounded">
+        <div className="align-self-center shadow-lg p-3 mb-5 bg-body rounded">
           <span className="align-middle">
             <br />
             <div className="card-header">
               <h2>Bookmarked Freelancer Find By ID</h2>
             </div>
-            <form className="was-validated">
+            <form className="was-validated" onSubmit={loadfreelancer}>
               <div className="mb-3">
                 <label htmlFor="exampleInputEmail1" className="form-label">
                   Bookmarked Freelancer ID
@@ -80,8 +81,8 @@ const BookmarkedFreelancerFindById = () => {
                 <input
                   type="number"
                   className="form-control"
-                  id="validationTextarea"
-                  aria-describedby="emailHelp"
+                  id="exampleInputPassword1"
+                  
                   onChange={handleInput}
                   required
                 />
@@ -89,14 +90,21 @@ const BookmarkedFreelancerFindById = () => {
                 {/* <p> Text Typed:{freelancer}</p> */}
               </div>
               <button
-                type="submit"
-                className="btn btn-primary"
-                onClick={loadfreelancer}
+                type="submit" 
+                className="btn btn-outline-primary"
               >
                 Find It
               </button>
-              {Object.keys(formErrors).length === 0 && isSubmit ? (
+              {Object.keys(formErrors).length === 0 &&
+              isSubmit &&
+              freelancer ? (
                 <div className="ui message success">Retrieved Successfully</div>
+              ) : (
+                <pre>{JSON.stringify(undefined, 2)}</pre>
+                // <div className="ui message success">Retrieved Successfully</div>
+              )}
+              {isSubmit && freelancer === null ? (
+                <div className="ui message success">Not Found</div>
               ) : (
                 <pre>{JSON.stringify(undefined, 2)}</pre>
                 // <div className="ui message success">Retrieved Successfully</div>

@@ -1,5 +1,5 @@
 import React from "react";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import axios from "axios";
 
 const BookmarkedFreelancerFindBySkill = () => {
@@ -9,7 +9,7 @@ const BookmarkedFreelancerFindBySkill = () => {
 
   const [freelancers, setFreelancers] = useState([]);
   const [input, setInput] = useState("");
-  const [formErrors, setFormErrors] = useState({});
+  const [formErrors] = useState({});
   const [isSubmit, setIsSubmit] = useState(false);
 
   const handleInput = (e) => {
@@ -35,12 +35,12 @@ const BookmarkedFreelancerFindBySkill = () => {
   // handleSearch();
 
   // console.log(input);
-  useEffect(() => {
-    console.log(formErrors);
-    if (Object.keys(formErrors).length == 0 && isSubmit) {
-      console.log(freelancers);
-    }
-  }, [formErrors]);
+  // useEffect(() => {
+  //   console.log(formErrors);
+  //   if (Object.keys(formErrors).length === 0 && isSubmit) {
+  //     console.log(freelancers);
+  //   }
+  // }, [formErrors]);
 
   return (
     <div>
@@ -76,14 +76,14 @@ const BookmarkedFreelancerFindBySkill = () => {
           </a>
         </li>
       </ul>
-      <div className="card">
-        <div className="order-2 p-2">
+      <div className="card shadow-lg p-3 mb-5 bg-body rounded">
+        <div className="align-self-center shadow-lg p-3 mb-5 bg-body rounded">
           <span className="align-middle">
             <br />
             <div className="card-header">
               <h2>Bookmarked Freelancer Find By Skill</h2>
             </div>
-            <form className="was-validated">
+            <form className="was-validated" onSubmit={handleSearch}>
               <div className="mb-3">
                 <label htmlFor="exampleInputEmail1" className="form-label">
                   Skill
@@ -108,27 +108,29 @@ const BookmarkedFreelancerFindBySkill = () => {
               <button
                 type="submit"
                 className="btn btn-primary"
-                onClick={handleSearch}
                 required
               >
                 Find It
               </button>
             </form>
-            {Object.keys(formErrors).length === 0 && isSubmit ? (
+            {Object.keys(formErrors).length === 0 &&
+            isSubmit &&
+            freelancers.length !== 0 ? (
               <div className="ui message success">Retrieved Successfully</div>
             ) : (
               <pre>{JSON.stringify(undefined, 2)}</pre>
               // <div className="ui message success">Retrieved Successfully</div>
             )}
+            {Object.keys(formErrors).length === 0 &&
+            isSubmit &&
+            freelancers.length === 0 ? (
+              <div className="ui message success">Not Found</div>
+            ) : (
+              <pre>{JSON.stringify(undefined, 2)}</pre>
+              // <div className="ui message success">Retrieved Successfully</div>
+            )}
           </span>
-          {/* <div>
-      { freelancer && freelancer.map( (item, index) => (
-        <div>
-          <p key={index}>{index+1}</p>
-          <p>{item.id}</p>
-          </div>
-      ))}
-     </div> */}
+
           <table className="table">
             <thead>
               <tr>

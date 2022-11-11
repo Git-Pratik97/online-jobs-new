@@ -1,5 +1,5 @@
 import React from "react";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 import axios from "axios";
 import { Link } from "react-router-dom";
@@ -35,17 +35,17 @@ const BookmarkFreelancerAdd = () => {
     setIsSubmit(true);
     setFormErrors(formErrors);
   };
-  useEffect(() => {
-    console.log(formErrors);
-    if (Object.keys(formErrors).length == 0 && isSubmit) {
-      console.log(input);
-    }
-  }, [formErrors]);
+  // useEffect(() => {
+  //   console.log(formErrors);
+  //   if (Object.keys(formErrors).length == 0 && isSubmit) {
+  //     console.log(input);
+  //   }
+  // }, [formErrors]);
 
   return (
     <div>
       <div>
-        <h1>Bookmarked Freelancer</h1>
+        <h1 className="">Bookmarked Freelancer</h1>
 
         <ul className="nav nav-tabs">
           <li className="nav-item">
@@ -77,8 +77,8 @@ const BookmarkFreelancerAdd = () => {
         {/* <BookmarkFreelancerAdd/> */}
         {/* <BookmarkedFreelancerFindById/> */}
       </div>
-      <div className="card">
-        <div className="align-middle">
+      <div className="card align-middle shadow-lg p-3 mb-5 bg-body rounded">
+        <div className="align-self-center shadow-lg p-3 mb-5 bg-body rounded">
           <span className="align-middle">
             <br />
             <div className="card-header">
@@ -162,6 +162,7 @@ const BookmarkFreelancerAdd = () => {
                   Cancel
                 </button>
               </Link>
+          
             </form>
             
           </span>
