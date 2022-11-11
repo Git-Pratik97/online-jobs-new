@@ -29,17 +29,17 @@ const FreelancerBookmarkJobs = () => {
       <ul className="nav nav-tabs">
         
         <li className="nav-item">
-          <a className="nav-link active" aria-current="page" href="/freelancer/bookmarkjobs">
+          <a className="nav-link active" aria-current="page" href="/bookmarkjobs">
             Bookmark Jobs
           </a>
         </li>
         <li className="nav-item">
-          <a className="nav-link" aria-current="page" href="/freelancer/searchjobs">
+          <a className="nav-link" aria-current="page" href="/searchjobs">
             Search Jobs
           </a>
         </li>
         <li className="nav-item">
-          <a className="nav-link" href="/freelancer/findbyid">
+          <a className="nav-link" href="/findbyid">
             Find By ID
           </a>
         </li>

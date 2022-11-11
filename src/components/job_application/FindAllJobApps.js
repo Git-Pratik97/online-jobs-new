@@ -59,7 +59,7 @@ function FindAllJobApps() {
                   <td>{job.appliedDate}</td>
                   <td>
                     <form action="">
-                      <Link to='/freelancer/awardjob'><button className="btn btn-primary" type="submit">Hire</button></Link>
+                      <Link to='/awardjob'><button className="btn btn-primary" type="submit">Hire</button></Link>
                     </form>
                   </td>
                 </tr>

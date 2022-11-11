@@ -27,17 +27,17 @@ const FreelancerFindById = () => {
       <ul className="nav nav-tabs">
         
         <li className="nav-item">
-          <a className="nav-link" aria-current="page" href="/freelancer/bookmarkjobs">
+          <a className="nav-link" aria-current="page" href="/bookmarkjobs">
             Bookmark Jobs
           </a>
         </li>
         <li className="nav-item">
-          <a className="nav-link" aria-current="page" href="/freelancer/searchjobs">
+          <a className="nav-link" aria-current="page" href="/searchjobs">
             Search Jobs
           </a>
         </li>
         <li className="nav-item">
-          <a className="nav-link active" href="/freelancer/findbyid">
+          <a className="nav-link active" href="/findbyid">
             Find By ID
           </a>
         </li>
@@ -46,7 +46,7 @@ const FreelancerFindById = () => {
     <div className="position-absolute top-50 start-50 translate-middle">
     <span className="align-middle"><br/>
       
-      <h2>Freelancer Find By ID</h2>
+      <h2>Freelancer Find By Freelancer ID</h2>
       
       <form>
   <div className="mb-3">

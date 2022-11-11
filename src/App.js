@@ -48,14 +48,14 @@ function App() {
         <Route path='/findalljobs' element={<FindAllJobApps/>}/>
 
         <Route path='/freelancer' element={<FreelancerHome/>}/>
-        <Route path='/findfreelancer' element={<FindFreelancer/>}/>
+        <Route path='admin/freelancer/findfreelancer' element={<FindFreelancer/>}/>
         <Route path='/awardjob' element={<AwardJob/>}/>
         <Route path='/MySkills' element={<MySkills/>}/>
         <Route path='freelancer/MySkills/AddSkill' element={<MySkillsAdd/>}/>
         <Route path='freelancer/MySkills/UpdateSkill' element={<MySkillsUpdate/>}/>
         <Route path='freelancer/MySkills/RemoveSkill' element={<MySkillsRemove/>}/>
 
-        <Route path='/findrecruiter' element={<FindRecruiter/>}/>
+        <Route path='admin/recruiter/findrecruiter' element={<FindRecruiter/>}/>
         <Route path='/findfeedbacksbyid' element={<FindFeedback/>}/>
         <Route path='/closejob' element={<DeleteJob/>}/>
 
