@@ -18,11 +18,11 @@ return(
             <div className="bg-success p-2 text-white bg-opacity-75">Update Skill</div>
             </Link>
           </li>
-          <li className="nav-item">
+          {/* <li className="nav-item">
             <Link className="nav-link" to="/freelancer/MySkills/RemoveSkill">
             <div className="bg-success p-2 text-white bg-opacity-75">Remove Skill</div>
             </Link>
-          </li>
+          </li> */}
         </ul>
 
     </div>

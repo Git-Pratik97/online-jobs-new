@@ -12,35 +12,35 @@ function RecruiterHome() {
       <br/>
       <div id="list-example" className="list-group">
       <div className="card-title">
-      <div className="p-3 border bg-light">
+      <div className="p-1 mb-2 bg-dark text-white bg-opacity-75">
           <Link className="list-group-item list-group-item-action" to="/PostJob/">Post Job</Link>
         </div>
       </div>
       <div className="card-title">
-      <div className="p-3 border bg-light">
+      <div className="p-1 mb-2 bg-dark text-white bg-opacity-75">
           <Link className="list-group-item list-group-item-action" to="/closejob">Close Job</Link>
         </div>
       </div>
 
       <div className="card-title">
 
-      <div className="p-3 border bg-light">
+      <div className="p-1 mb-2 bg-dark text-white bg-opacity-75">
           <Link className="list-group-item list-group-item-action" to="/bookmarked_freelancer">Bookmarked Freelancer</Link>
         </div>
  
       </div>
       <div className="card-title">
-      <div className="p-3 border bg-light">
+      <div className="p-1 mb-2 bg-dark text-white bg-opacity-75">
           <Link className="list-group-item list-group-item-action" to="/createfeedback">Create Feedback</Link>
         </div>
       </div>
       <div className="card-title">
-      <div className="p-3 border bg-light">
+      <div className="p-1 mb-2 bg-dark text-white bg-opacity-75">
           <Link className="list-group-item list-group-item-action" to="/awardjob">Award Job to freelancer</Link>
         </div>
       </div>
       <div className="card-title">
-      <div className="p-3 border bg-light">
+      <div className="p-1 mb-2 bg-dark text-white bg-opacity-75">
           <Link className="list-group-item list-group-item-action" to="/findalljobs">Find All Job Applications</Link>
         </div>
       </div>
