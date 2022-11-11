@@ -1,0 +1,24 @@
+.App {
+  text-align: center;
+}
+
+nav{
+  display:contents;
+  justify-content:center;
+  align-items: center;
+  min-height: 10vh;
+  background: rgb(61, 56, 56);
+  color:white
+}
+
+ul{
+  display:contents;
+  gap: 20px;
+  justify-content: space-between;
+  list-style: none;
+  margin-right: 30px;
+}
+
+body{
+  background-image: url("bg.jpg");
+}
