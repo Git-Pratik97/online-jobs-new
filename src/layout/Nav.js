@@ -9,6 +9,9 @@ const Nav = () => {
     <nav className="navbar navbar-dark bg-dark">
       <h1>Online Jobs</h1>
       <ul>
+      <Link style={navStyle} to="/">
+          <li>Home</li>
+        </Link>
         <Link style={navStyle} to="/admin">
           <li>Admin</li>
         </Link>

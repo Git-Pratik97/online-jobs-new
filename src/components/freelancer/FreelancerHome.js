@@ -3,40 +3,57 @@ import { Link } from "react-router-dom";
 
 const FreelancerHome = () => {
   return (
+    <div class="container">
+  <div class="row gx-5">
     <div class="card">
       <div class="card-header">
         <h2>Freelancer Home</h2>
-      </div>
-      <div class="card-body">
-        <Link to="/showalljobapplicationsbyfreelancer">
+        </div>
+        <br/>
+      <div id="list-example" class="list-group">
+      <div class="card-title ">
+      <div class="p-3 border bg-light">
+        <Link className="list-group-item list-group-item-action " to="/showalljobapplicationsbyfreelancer">
           Show All job Applications by Freelancer ID
         </Link>
+        </div>
       </div>
-      {/* <div><Link to='/freelancer/awardjob'>Award Job to Freelancer</Link></div> */}
+      <div class="card-title">
+      <div class="p-3 border bg-light">
+        <Link className="list-group-item list-group-item-action" to="/SkillExperience/">SkillExperience</Link>
+        </div>
+      </div>
 
       <div class="card-title">
-        <Link to="/SkillExperience/">SkillExperience</Link>
-      </div>
 
-      <div class="card-title">
-        <Link to="/MySkills/">MySkills</Link>
-      </div>
-
-      {/* <li className="nav-item"> */}
-      <div class="card-title">
-        <Link to="/bookmarkjobs">Bookmark Jobs</Link>
-      </div>
-      <div class="card-title">
-        <Link to="/searchjobs">Search Jobs</Link>
-      </div>
-      <div class="card-title">
-        <Link to="/findbyid">Find Freelancer By ID</Link>
+      <div class="p-3 border bg-light">
+        <Link className="list-group-item list-group-item-action" to="/MySkills/">MySkills</Link>
+        </div>
+ 
+ </div>
+ <div class="card-title">
+ <div class="p-3 border bg-light">
+        <Link className="list-group-item list-group-item-action" to="/bookmarkjobs">Bookmark Jobs</Link>
+        </div>
       </div>
       <div class="card-title">
-        <Link to="/findfeedbacksbyid">Find Feedbacks By Id</Link>
+      <div class="p-3 border bg-light">
+        <Link className="list-group-item list-group-item-action" to="/searchjobs">Search Jobs</Link>
+        </div>
       </div>
-
-      {/* </li> */}
+      <div class="card-title">
+      <div class="p-3 border bg-light">
+        <Link className="list-group-item list-group-item-action" to="/findbyid">Find Freelancer By ID</Link>
+        </div>
+      </div>
+      <div class="card-title">
+      <div class="p-3 border bg-light">
+        <Link className="list-group-item list-group-item-action" to="/findfeedbacksbyid">Find Feedbacks By Id</Link>
+        </div>
+      </div>
+    </div>
+    </div>
+    </div>
     </div>
   );
 };
