@@ -53,7 +53,7 @@ const FreelancerFindById = () => {
                 Search Freelancer ID
               </label>
               <input
-                type="email"
+                type="number"
                 className="form-control"
                 id="exampleInputEmail1"
                 aria-describedby="emailHelp"

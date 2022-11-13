@@ -3,8 +3,8 @@
 }
 
 nav{
-  display:contents;
-  justify-content:center;
+  display:inline-flexbox;
+  justify-content:right;
   align-items: center;
   min-height: 10vh;
   background: rgb(61, 56, 56);

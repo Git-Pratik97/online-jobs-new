@@ -31,6 +31,9 @@ import Admin from './components/admin/Admin';
 import ApplyForJob from './components/job_application/ApplyForJob';
 import Home from './layout/Home';
 import FindAllJobs from './components/job/FindAllJobs';
+import SkillExperience from './components/skill_experience/SkillExperience';
+import SkillExperienceAdd from './components/skill_experience/SkillexperienceAdd';
+import SkillExperienceUpdateYears from './components/skill_experience/SkillexperienceUpdate';
 
 function App() {
   return (
@@ -57,6 +60,10 @@ function App() {
         <Route path='/MySkills' element={<MySkills/>}/>
         <Route path='/applyforjob' element={<ApplyForJob/>}/>
         <Route path='/findalljobs' element={<FindAllJobs/>}/>
+        <Route path='/SkillExperience' element={<SkillExperience/>}/>
+        <Route path='/SkillExperience/Add' element={<SkillExperienceAdd/>}/>
+        <Route path='/SkillExperience/UpdateYears' element={<SkillExperienceUpdateYears/>}/>
+
         
         <Route path='freelancer/MySkills/AddSkill' element={<MySkillsAdd/>}/>
         <Route path='freelancer/MySkills/UpdateSkill' element={<MySkillsUpdate/>}/>

@@ -75,11 +75,9 @@ const BookmarkedFreelancerFindById = () => {
             </div>
             <form className="was-validated" onSubmit={loadfreelancer}>
               <div className="mb-3">
-                <label htmlFor="exampleInputEmail1" className="form-label">
-                  Bookmarked Freelancer ID
-                </label>
+                <label htmlFor="exampleInputEmail1" className="form-label">Bookmarked Freelancer ID</label>
                 <input
-                  type="number"
+                  type='number'
                   className="form-control"
                   id="exampleInputPassword1"
                   

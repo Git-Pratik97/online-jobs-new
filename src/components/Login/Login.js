@@ -1,33 +1,55 @@
 //import React from "react";
 import { useState } from "react";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
+
 const Login = () => {
-  const initialValues = { username: "", password: "" };
+  const initialValues = { userName: "", password: "", role: ""};
   const [formValues, setFormValues] = useState(initialValues);
   const [formErrors, setFormErrors] = useState({});
   const [isSubmit, setIsSubmit] = useState(false);
 
+  const navigate = useNavigate();
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormValues({ ...formValues, [name]: value });
+    console.log(formValues);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     setFormErrors(validate(formValues));
     setIsSubmit(true);
+    let keys = Object.keys(formErrors);
+
+    if(keys.length === 0) {
+    console.log("No Errors");
+    axios.post(`http://localhost:8080/jobportal/admin/login`, JSON.stringify(formValues),
+    {headers:{"Content-Type" : "application/json"}}).then((data)=>{
+      console.log(data.data);
+      if(data.data.role === 'recruiter') {
+         navigate('/recruiter');
+      }
+      if(data.data.role === 'freelancer') {
+        navigate('/freelancer');
+     }
+     if(data.data.role === 'admin') {
+      navigate('/admin');
+   }
+    }).catch((error)=>console.log(error));
+    }else {
+      console.log("Errors Present");
+    }
+
   };
 
-  // useEffect(() => {
-  //   console.log(formErrors);
-  //   if (Object.keys(formErrors).length === 0 && isSubmit) {
-  //     console.log(formValues);
-  //   }
-  // }, [formErrors]);
+ 
   const validate = (values) => {
     const errors = {};
     //const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
-    if (!values.username) {
-      errors.username = "User Name is required!";
+    if (!values.userName) {
+      errors.userName = "User Name is required!";
     }
     /*if (!values.email) {
       errors.email = "Email is required!";
@@ -55,31 +77,32 @@ const Login = () => {
       )}
 
       <form className="was-validated" onSubmit={handleSubmit}>
-        <h4>Please enter details below to login</h4>
-        <br></br>
+      <div className="card-header">
+            <h2>Login</h2>
+          </div>
         {/* <div className="ui divider"></div> */}
         <div className="ui form">
           <div className="field">
           <label htmlFor="exampleInputEmail1" className="form-label">User Name</label>
             <input
               type="text"
-              name="username"
+              name="userName"
               className="form-control"
-              id="validationTextarea"
+              // id="validationTextarea"
               placeholder="Enter user name"
-              value={formValues.username}
+              value={formValues.userName}
               onChange={handleChange}
               required
             />
           </div>
-          <p>{formErrors.username}</p>
+          <p>{formErrors.userName}</p>
           <div className="field">
           <label htmlFor="exampleInputEmail1" className="form-label">Password</label>
             <input
               type="password"
               name="password"
               className="form-control"
-              id="validationTextarea"
+              // id="validationTextarea"
               placeholder="Enter Password"
               value={formValues.password}
               onChange={handleChange}
@@ -87,8 +110,8 @@ const Login = () => {
             />
           </div>
           <p>{formErrors.password}</p>
-          <div className="dropdown" type="button" data-bs-toggle="dropdown">
-            <select id="role" name="role">
+          <div className="dropdown" >
+            <select id="role" name="role" value={formValues.role} onChange={handleChange}>
               <option value="default">Select Role</option>
               <option value="admin">Admin</option>
               <option value="recruiter">Recruiter</option>

@@ -149,11 +149,12 @@ const BookmarkFreelancerAdd = () => {
               /> */}
               {/* </div> */}
               {Object.keys(formErrors).length === 0 && isSubmit ? (
-              <div className="ui message success">Bookmarked Successfully</div>
+              <div className="ui message success text-success border rounded-top">Bookmarked Successfully</div>
             ) : (
               <pre>{JSON.stringify(undefined, 2)}</pre>
               // <div className="ui message success">Retrieved Successfully</div>
             )}
+            <br/>
               <button type="submit" className="btn btn-outline-primary">
                 Add
               </button>

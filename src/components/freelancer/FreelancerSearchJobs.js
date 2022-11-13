@@ -66,7 +66,7 @@ const FreelancerSearchJobs = () => {
                 Search Job ID
               </label>
               <input
-                type="email"
+                type="number"
                 className="form-control"
                 id="exampleInputEmail1"
                 aria-describedby="emailHelp"

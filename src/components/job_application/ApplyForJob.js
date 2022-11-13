@@ -20,6 +20,7 @@ const ApplyForJob = () => {
         .then((resp) => {
           console.log("Applied");
           console.log(resp.data);
+          console.log(formik.values.coverLetter)
         })
         .catch((err) => {
           console.error(err.response.data);

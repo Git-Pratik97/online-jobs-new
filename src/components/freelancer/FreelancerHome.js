@@ -20,59 +20,46 @@ const FreelancerHome = () => {
                 Show All job Applications by Freelancer ID
               </Link>
             </div>
-            {/* </div> */}
-            {/* <div className="card-title">
-      <div className="p-3 border bg-light">
-        <Link className="list-group-item list-group-item-action" to="/SkillExperience/">SkillExperience</Link>
-        </div>
-      </div> */}
 
-            <div className="card-title">
               <div className="card shadow-lg p-2 mb-1 bg-body rounded">
                 <Link className="list-group-item " to="/MySkills/">
-                  MySkills
+                  My Skills
                 </Link>
               </div>
-            </div>
-            {/* <div className="card-title"> */}
+
             <div className="card shadow-lg p-2 mb-1 bg-body rounded">
               <Link className="list-group-item " to="/bookmarkjobs">
                 Bookmark Jobs
               </Link>
             </div>
-            {/* </div> */}
-            {/* <div className="card-title"> */}
+        
             <div className="card shadow-lg p-2 mb-1 bg-body rounded">
               <Link className="list-group-item " to="/searchjobs">
                 Search Jobs
               </Link>
             </div>
-            {/* </div> */}
-            {/* <div className="card-title"> */}
-            <div className="card shadow-lg p-2 mb-1 bg-body rounded">
-              <Link className="list-group-item " to="/findbyid">
-                Find Freelancer By ID
-              </Link>
-            </div>
-            {/* </div> */}
-            {/* <div className="card-title"> */}
+          
             <div className="card shadow-lg p-2 mb-1 bg-body rounded">
               <Link className="list-group-item " to="/findfeedbacksbyid">
                 Find Feedbacks By Id
               </Link>
             </div>
-            {/* </div> */}
-            {/* <div className="card-title"> */}
+    
             <div className="card shadow-lg p-2 mb-1 bg-body rounded">
               <Link className="list-group-item " to="/applyforjob">
-                Apply For Job{" "}
+                Apply For Job
               </Link>
             </div>
-            {/* </div> */}
-            {/* <div className="card-title"> */}
+        
             <div className="card shadow-lg p-2 mb-1 bg-body rounded">
               <Link className="list-group-item " to="/findalljobs">
-                Find All Jobs{" "}
+                Find All Jobs
+              </Link>
+            </div>
+
+            <div className="card shadow-lg p-2 mb-1 bg-body rounded">
+              <Link className="list-group-item " to="/SkillExperience">
+                Skil Experience
               </Link>
             </div>
           </div>

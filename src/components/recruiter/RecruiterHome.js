@@ -12,58 +12,48 @@ function RecruiterHome() {
           <br />
           <div id="list-example" className="list-group">
             <div className="card-title">
-            <div className="card shadow-lg p-2 mb-1 bg-body rounded">
-                <Link
-                  className="list-group-item "
-                  to="/PostJob/"
-                >
+              <div className="card shadow-lg p-2 mb-1 bg-body rounded">
+                <Link className="list-group-item " to="/PostJob/">
                   Post Job
                 </Link>
               </div>
-            {/* </div> */}
-            {/* <div className="card-title">
+              {/* </div> */}
+              {/* <div className="card-title">
       <div className="p-1 mb-2 bg-dark text-white bg-opacity-75">
           <Link className="list-group-item " to="/closejob">Close Job</Link>
         </div>
       </div> */}
 
-            {/* <div className="card-title"> */}
-            <div className="card shadow-lg p-2 mb-1 bg-body rounded">
-                <Link
-                  className="list-group-item "
-                  to="/bookmarked_freelancer"
-                >
+              {/* <div className="card-title"> */}
+              <div className="card shadow-lg p-2 mb-1 bg-body rounded">
+                <Link className="list-group-item " to="/bookmarked_freelancer">
                   Bookmarked Freelancer
                 </Link>
               </div>
-            {/* </div>
+              {/* </div>
             <div className="card-title"> */}
-            <div className="card shadow-lg p-2 mb-1 bg-body rounded">
-                <Link
-                  className="list-group-item "
-                  to="/createfeedback"
-                >
+              <div className="card shadow-lg p-2 mb-1 bg-body rounded">
+                <Link className="list-group-item " to="/createfeedback">
                   Create Feedback
                 </Link>
               </div>
-            {/* </div> */}
-            {/* <div className="card-title"> */}
+              {/* </div> */}
+              {/* <div className="card-title"> */}
               <div className="card shadow-lg p-2 mb-1 bg-body rounded">
-                <Link
-                  className="list-group-item "
-                  to="/awardjob"
-                >
+                <Link className="list-group-item " to="/awardjob">
                   Award Job to freelancer
                 </Link>
               </div>
-            {/* </div> */}
-            {/* <div className="card-title"> */}
-            <div className="card shadow-lg p-2 mb-1 bg-body rounded">
-                <Link
-                  className="list-group-item "
-                  to="/findalljobapps"
-                >
+              {/* </div> */}
+              {/* <div className="card-title"> */}
+              <div className="card shadow-lg p-2 mb-1 bg-body rounded">
+                <Link className="list-group-item " to="/findalljobapps">
                   Find All Job Applications
+                </Link>
+              </div>
+              <div className="card shadow-lg p-2 mb-1 bg-body rounded">
+                <Link className="list-group-item " to="/findbyid">
+                  Find Freelancer By ID
                 </Link>
               </div>
             </div>
