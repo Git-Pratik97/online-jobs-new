@@ -11,7 +11,7 @@ const formik = useFormik({
   },
   onSubmit: (values) => {
     console.log(values);
-    axios.get(`http://localhost:8080/jobportal/skillexperience/addSkill/${values.skillId}/${values.freelancerId}?years=${values.years}`, values)
+    axios.get(`http://localhost:8080/skillexperience/addSkill/${values.skillId}/${values.freelancerId}?years=${values.years}`, values)
     .then(resp=>{
         console.log("Added");
         console.log(resp.data);

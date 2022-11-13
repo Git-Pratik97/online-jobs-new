@@ -13,6 +13,8 @@ const BookmarkedFreelancerRemove = () => {
   // const [output, setOutput]
 
   const { freelancerId, bookmarkedById, skillId } = input;
+  const [formErrors, setFormErrors] = useState({});
+  const [isSubmit, setIsSubmit] = useState(false);
 
   const onInputChange = (e) => {
     setInput({ ...input, [e.target.name]: e.target.value });
@@ -24,6 +26,8 @@ const BookmarkedFreelancerRemove = () => {
       `http://localhost:8080/jobportal/bookmarkedfreelancer/removeBookmarkedFreelancer/${freelancerId}/${bookmarkedById}/${skillId}`
     );
     console.log("Removed");
+    setIsSubmit(true);
+    setFormErrors(formErrors);
   };
 
   return (
@@ -122,16 +126,13 @@ const BookmarkedFreelancerRemove = () => {
                   Please Enter Valid Skill ID
                 </div>
               </div>
-              {/* <div className="mb-3 form-check">
-              <input
-                type="checkbox"
-                className="form-check-input"
-                id="exampleCheck1"
-              />
-              <label className="form-check-label" htmlFor="exampleCheck1">
-                Check me out
-              </label>
-            </div> */}
+              {Object.keys(formErrors).length === 0 && isSubmit ? (
+              <div className="ui message danger text-danger border rounded-top">Removed Successfully</div>
+            ) : (
+              <pre>{JSON.stringify(undefined, 2)}</pre>
+              // <div className="ui message success">Retrieved Successfully</div>
+            )}
+            <br/>
               <button type="submit" className="btn btn-outline-primary">
                 Remove
               </button>

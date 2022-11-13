@@ -14,7 +14,7 @@ const formik = useFormik({
 
   onSubmit: (values) => {
     console.log(values);
-    axios.put(`http://localhost:8080/jobportal/skillexperience/updateskillyears/${values.freelancerId}/${values.skillId}?years=${values.years}`, values)
+    axios.put(`http://localhost:8080/skillexperience/updateskillyears/${values.freelancerId}/${values.skillId}?years=${values.years}`, values)
     .then(resp=>{
         console.log("Updated");
         console.log(resp.data);
@@ -42,7 +42,7 @@ const formik = useFormik({
 //console.log(formik.values);
 return(
     <div className="UpdateYears">
-    <div class="bg-success p-2 text-white bg-opacity-75">Update your SkillExperience details</div>
+    <div className="bg-success p-2 text-white bg-opacity-75">Update your SkillExperience details</div>
         <form className="was-validated" autoComplete="off" onSubmit={formik.handleSubmit}>
 
         <div className="form-group">

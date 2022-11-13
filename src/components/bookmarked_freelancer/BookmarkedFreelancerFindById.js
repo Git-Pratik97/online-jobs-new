@@ -101,7 +101,7 @@ const BookmarkedFreelancerFindById = () => {
                 <pre>{JSON.stringify(undefined, 2)}</pre>
                 // <div className="ui message success">Retrieved Successfully</div>
               )}
-              {isSubmit && freelancer === null ? (
+              {formErrors.errorCode === 404 ? (
                 <div className="ui message success">Not Found</div>
               ) : (
                 <pre>{JSON.stringify(undefined, 2)}</pre>
